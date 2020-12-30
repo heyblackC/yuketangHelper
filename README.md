@@ -2,8 +2,8 @@
 ## 华工研究生雨课堂网课脚本代码
 homeworkHelper.py是雨课堂网课作业刷题自动脚本  
 videoHelper.py是雨课堂网课视频观看自动脚本  
-我们雨课堂的网站是：https://gsscut.yuketang.cn/pro/portal/home/
-最后更新日期：2020年12月18日
+我们雨课堂的网站是：https://gsscut.yuketang.cn/pro/portal/home/  
+最后更新日期：2020年12月30日
 
 ## 须知
 - 脚本假定使用者具有基本的计算机知识，懂得cookie，会按F12进入开发者模式，且会运行Python代码  
@@ -11,13 +11,17 @@ videoHelper.py是雨课堂网课视频观看自动脚本
 ![cookies示例](cookie.png)
 - 我知道大佬有很多，请别喷我写的代码，然后也希望一起协同完善呀！
 
+## 跨校使用
+1. 更改代码中学校的网站地址：https://xxx.yuketang.cn/....(xxx为自己学校的)
+2. 根据登录后cookie里的university_id值，更改代码中university-id、university_id、uv_id  
+感谢@honlu同学的测试
 ---
 
 ## 开发记录
 ### homeworkHelper.py  
 - v1、v2版本甚至无法在别人电脑上运行orz
 - v3版本仅能刷项目管理概论作业题，由我独立开发
-- v4版本由素未相识的李同学友情改良，可以刷用户名下所有的课程的线上作业（非常感谢杨宇康同学和他的舍友）
+- v4版本由素未相识的李同学友情改良，可以刷用户名下所有的课程的线上作业（非常感谢杨同学和他的舍友）
 - V5版本旨在跨学院使用，兼容了填空题，另外增加了交互，可以选择想刷哪个课程
 
 ### videoHelper.py
