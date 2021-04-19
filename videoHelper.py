@@ -96,7 +96,7 @@ def one_video_watcher(video_id,video_name,cid,user_id,classroomid,skuid):
         except:
             pass
         progress = requests.get(url=get_url,headers=headers)
-        tmp_rate = re.search(r'"rate":(.+?)}',progress.text)
+        tmp_rate = re.search(r'"rate":(.+?)[,}]',progress.text)
         if tmp_rate is None:
             return 0
         val = tmp_rate.group(1)
