@@ -54,7 +54,7 @@ def one_video_watcher(video_id,video_name,cid,user_id,classroomid,skuid):
     val = 0
     learning_rate = 20
     t = time.time()
-    timstap = int(round(t * 1000))
+    timestap = int(round(t * 1000))
     while val != "1.0" and val != '1':
         heart_data = []
         for i in range(50):
@@ -69,7 +69,7 @@ def one_video_watcher(video_id,video_name,cid,user_id,classroomid,skuid):
                     "fp": 0,
                     "tp": 0,
                     "sp": 1,
-                    "ts": str(timstap),
+                    "ts": str(timestap),
                     "u": int(user_id),
                     "uip": "",
                     "c": cid,
@@ -84,13 +84,22 @@ def one_video_watcher(video_id,video_name,cid,user_id,classroomid,skuid):
                 }
             )
             video_frame += learning_rate
+            max_time = int((time.time() + 3600) * 1000)
+            timestap = min(max_time, timestap+1000*15)
         data = {"heart_data": heart_data}
         r = requests.post(url=url,headers=headers,json=data)
         print(r.text)
         try:
+            error_msg = json.loads(r.text)["message"]
+            if "anomaly" in error_msg:
+                video_frame = 0
+        except:
+            pass
+        try:
             delay_time = re.search(r'Expected available in(.+?)second.', r.text).group(1).strip()
             print("由于网络阻塞，万恶的雨课堂，要阻塞" + str(delay_time) + "秒")
             time.sleep(float(delay_time) + 0.5)
+            video_frame = 0
             print("恢复工作啦～～")
             r = requests.post(url=submit_url, headers=headers, data=data)
         except:
