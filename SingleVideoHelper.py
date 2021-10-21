@@ -6,6 +6,15 @@ import requests
 import re
 import json
 
+'''
+长江雨课堂版本，在一些网址上有修改。
+需要自己填写以下的个人信息和课程信息，
+而且，，，每次只能刷一个课程。
+
+(没有测试过网络拥塞的情况)
+2021.10
+'''
+
 # 以下的csrftoken和sessionid需要改成自己登录后的cookie中对应的字段！！！！而且脚本需在登录雨课堂状态下使用
 # 登录上雨课堂，然后按F12-->选Application-->找到雨课堂的cookies，寻找csrftoken和sessionid字段，并复制到下面两行即可
 csrftoken = ""  # 需改成自己的
