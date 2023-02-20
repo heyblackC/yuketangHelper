@@ -1,7 +1,7 @@
 # yuketangHelper
 ## 研究生雨课堂网课脚本代码
 homeworkHelper.py是雨课堂网课作业刷题自动脚本  
-SingleVideoHelper.py是长江雨课堂版的视频观看脚本
+SingleVideoHelper.py是长江雨课堂版的视频观看脚本  
 videoHelper.py是雨课堂网课视频观看自动脚本  
 我们雨课堂的网站是：https://gsscut.yuketang.cn/pro/portal/home/  
 最后更新日期：2023年2月20日（有同学反馈说脚本还是能用～）  
